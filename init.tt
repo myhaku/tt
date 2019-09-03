@@ -1,0 +1,22 @@
+#nop 加载常用别名、触发、配置、逍遥行、连接信息;
+#re ali.tt;
+#re act.tt;
+#re config.tt;
+#re goto.tt;
+#re emote.tt;
+
+#act {^#SESSION 'gts' ACTIVATED.} {#re init.tt};
+#gag {^#SESSION 'gts' ACTIVATED.};
+#class tmp open;
+
+#alias pku {#class tmp kill;#re pku.tt};
+
+#class tmp close;
+
+#echo {%c%h} {light yellow};
+#echo {%c%h} {light green} {【请输入pku指令连接至北大侠客行】};
+#echo {%c%h} {light green} {【自定义命令帮助指令omg】};
+#echo {%c%h} {light green}{【逍遥行指令gt】};
+#echo {%c%h} {light yellow};
+
+
