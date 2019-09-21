@@ -1,4 +1,4 @@
-# TINTIN++中文文档
+# TINTIN++中文手册
 
 # 导航
 
@@ -3518,7 +3518,7 @@ While 命令的工作方式类似于 c 中的 while 命令。一旦条件等于 
 
 > 示例: #write bla.tin
 
-会把你的TinTin别名、动作等写给 bla.tin。
+会把你的TinTin别名、触发器等写给 bla.tin。
 
 另可参见: [Log](#log), [Read](#read), [Scan](#scan) and [Textin](#textin).
 

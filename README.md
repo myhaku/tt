@@ -3,7 +3,7 @@
 |[Tintin++](https://tintin.sourceforge.io/)
 |[Termux](https://github.com/termux/termux-app)|
 </br>
-|[Tintin++中文文档](./Wiki.md)|
+|[Tintin++中文手册](./Wiki.md)|
 </br>
 |[北侠官网](http://pkuxkx.net/)
 |[北侠Wiki](http://pkuxkx.net/wiki/)
@@ -17,12 +17,14 @@
 
 北大侠客行是一个MUDs文字游戏，</br>
 Termux是一个安卓系统上的终端模拟器，</br>
-Tinin++ 是一个跨平台的MUDs客户端。</br>
+Tintin++ 是一个跨平台的MUDs客户端。</br>
 
 北大侠客行可使用 Tintin++ 客户端连接，</br>
 Tinin++可以运行在Termux上。
 
 So：tintin++ on termux for pkuxkx。
+
+注：客户端用法与其他平台一致。
 
 ## 0。Termux
 
@@ -90,6 +92,8 @@ cd /tt/src
 ./configure
 make
 cp tt++ /data/data/com.termux/files/usr/bin/
+或
+cp tt++ $PREFIX/usr/bin/
 ```
 
 
@@ -270,7 +274,7 @@ tintin++可以写触发器获取链接
 
 ### 机器人实例：
 
-**详见**|[TinTin++中文文档](./Wiki.md)|
+**详见**|[TinTin++中文手册](./Wiki.md)|
 
 ## 6。天高任鸟飞
 
