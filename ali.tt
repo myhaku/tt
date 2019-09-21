@@ -170,7 +170,15 @@
 #alias {tnx} {#class tna kill;#untic tna};
 
 #nop 自动打坐；
-#alias {dza} {#class dza read bot/dza.tt;dazuoa};
+#alias {dza} {#class dza read bot/dza.tt;
+     #switch {"%1"} {
+        #case {"dz"} {
+              #ali dzaa dz;
+              #echo 开始dz...}
+        #default {
+              #echo 开始打坐...}
+     }
+};
 #alias {dzx} {#class dza kill;#untic dza};
 
 #nop 自动修炼；

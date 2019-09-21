@@ -1,26 +1,33 @@
 #class dza open;
 
-#tic {dza} {dazuoa} {77};
+#tic {dza} {dzaa} {77};
 
-#alias {dazuoa} {dazuo max};
+#tic {dzaa} {#untic dzaa;dzaa} {1};
 
-#act {你现在内力接近圆满状态。} {hpbrief;dazuo 10};
+#alias {dzaa} {dazuo max};
 
-#act {你%*站了起来} {dazuoa};
+#act {你现在内力接近圆满状态。} {dazuo 10};
+
+#act {你%*站了起来} {dzaa};
 
 #act {你的内力增加了！！} {hpbrief};
 
-#act {你的内功还没有达到那个境界} {dazuoa};
+#act {你的内功还没有达到那个境界} {dzaa};
 
 #act {你现在气血严重不足，无法满足打坐最小要求}{sleep};
 
 #act {你现在的气太少了，无法产生内息} {sleep};
 
-#act {你现在精不够，无法控制内息的流动} {exert regenerate;#delay 2 {dazuoa}};
+#act {你现在精不够，无法控制内息的流动} {exert regenerate;#delay 2 {dzaa}};
 
 #act {你的内力不够} {sleep};
 
-#act {你的内力修为似乎已经达到了瓶颈。} {dzx;#untic dza;tna};
+#act {你的内力修为似乎已经达到了瓶颈。} {
+    #if {$dzaa == dz}
+          {dz}
+    #else
+          {dzx;#untic dza;tna}
+};
 
 #act {你现在身体状况太差了，无法集中精神！} {sleep}; 
 
@@ -31,7 +38,7 @@
 #act {你一觉醒来，精神抖擞地活动了几下手脚。} {
 #delay 1 {eat liang;
 #delay 1 {drink jiudai;
-#delay 1 {dazuoa};
+#delay 1 {dzaa};
 }}};
 
 
