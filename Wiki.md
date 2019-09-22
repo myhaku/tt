@@ -3519,7 +3519,14 @@ While 命令的工作方式类似于 c 中的 while 命令。一旦条件等于 
 > 示例: #write bla.tin
 
 会把你的TinTin别名、触发器等写给 bla.tin。
+```
+来自dzp@pkuxkx的注释：
 
+单独 #write 变量、别名等出来，
+可以写到一个单独的 class 里，
+使用下列命令保存：
+#class {<classname>} {write} {<filename>}。
+```
 另可参见: [Log](#log), [Read](#read), [Scan](#scan) and [Textin](#textin).
 
 ## Zap
