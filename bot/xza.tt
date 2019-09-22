@@ -20,9 +20,9 @@
       #delay 1 {#var xzaa 2;
       #delay 1 {e;s;buy pot;
       #delay 3 {n;w;s;e;
-      #delay 2 {buy im_139;
-      #delay 2 {buy im_139;
-      #delay 2 {xzaa;
+      #delay 2 {buy im_333;
+      #delay 2 {buy im_333;
+      #delay 3 {xzaa;
   }}}}}}};
   #elseif {$xzaa == 2} {
      #delay 1 {#var xzaa 3;
