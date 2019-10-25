@@ -19,6 +19,7 @@
     #re init.tt;
     #event {SCREEN RESIZE} {#split}
 };
+#alias {dck} {dz -check};
 #alias {dqa} {#tic {duoqi} {duo} {1}};
 #alias {dqx} {#untic duoqi};
 #alias {p.lt} {perform strike.leiting};

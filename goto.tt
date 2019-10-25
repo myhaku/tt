@@ -1243,14 +1243,14 @@
 #var myid {};
 #var mygender {};
 #var mydodgelv 0;
-#act {^≡━◎个人档案◎━━━━━━━━━━━━━━━━━━━━━━━━≡$}
+#act {^≡━━━━◎人物详情◎━━━━━━━━━━━━━━━━━━━━━━━━━━≡$}
 {
 	#class tmp open;
-	#act {^【%*】%*(%%1)$} {#var myid @lower{%%1}};
+	#act {^ 【%*】%*(%*)$} {#var myid @lower{%%3}};
 	#act {你是%*第%*代弟子} {#var mymenpai %%1};
 	#act {你是朝廷%*品官员} {#var mymenpai 朝廷};
 	#act {你是一位%*岁的%*婚%*性人类} {#var myage @ctd{%%1};#var mygender %%3};
-	#act {≡━━━━━━━━━━━━━━━━━━━━━━◎北大侠客行◎━━≡} {#class tmp kill};
+	#act {^≡━━━━━━━━━━━━━━━━━━━━━━━━◎北大侠客行◎━━━━≡$} {#class tmp kill};
 	#class tmp close;
 };
 
