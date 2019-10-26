@@ -196,24 +196,35 @@ set encoding=utf-8
 - 此处可将配置文件使用git上传至github，</br>
 这样更换环境后克隆仓库即可快速使用配置。
 
-- 或者直接复制到</br>`/data/data/com.termux/files/home/`目录</br>（需要root权限，改用户组、权限）。
-
-- 或者使用安装ssh使用sftp或scp传输。
+- 或者安装ssh使用sftp或scp传输。
 
 - tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
 
-**推荐git方式，例如：**
+- termux内建的termux-setup-storage接口可以在$home创建一个对内部存储的符号链接，我们可以直接访问内存卡或者建立相应目录的符号链接。
+```
+使用termux管理的流程（本地推荐）：
 
-> git clone https://github.com/zixijian/tt.git tt
+1.建立符号链接
+输入：termux-setup-storage
+在弹出的权限要求中点击允许。
+2.访问内存卡中的tt目录
+cd $home/storage/shared/tt
+3.内存卡中tt目录的符号链接到当前目录
+ln -s storage/shared/tt ./tt
+4.通过符号链接进入内存卡的tt目录
+cd tt
+```
+```
+使用git管理的流程（远程推荐）：
 
-> cd tt
+git clone https://github.com/zixijian/tt.git tt
+cd tt
+screen tt++ init.tt
 
-> screen tt++ init.tt
+更新新仓库内容输入指令：
+git pull
 
-**更新新仓库内容输入指令：**
-
-> git pull
-
+```
 ### screen 管理进程
 
 - 组合键ctrl+a+d后台运行；
