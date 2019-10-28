@@ -223,7 +223,6 @@ screen tt++ init.tt
 
 更新新仓库内容输入指令：
 git pull
-
 ```
 ### screen 管理进程
 
