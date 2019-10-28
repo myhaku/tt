@@ -26,6 +26,36 @@ So：tintin++ on termux for pkuxkx。
 
 注：客户端用法与其他平台一致。
 
+### 怎么进入MUDs游戏？
+
+- 1.安装Termux
+
+style插件非必选，可配置字体和主题风格。
+
+- 2.在Termux中安装必须软件及一些必要配置
+
+Termux本身不能运行MUDs游戏，必须安装mud客户端，比如tintin++、Go-Mud，
+环境配置可以帮助更好的游戏(比如解决乱码和快速进入游戏)。
+
+- 3.配置文件管理
+
+机器人脚本则是必须的，尤其是没有图形界面的客户端，建议先使用xgg@pkuxkx的机器人熟悉一下。
+
+- 4.启动游戏客户端
+
+这时候启动游戏即可。
+
+```
+写给小白的话(老白们跳过)：
+
+不会只是暂时的，
+没有人天生什么就都懂，
+请细致地阅读文中内容，
+请合理地使用搜索引擎，
+请合理地联想相同的方法和规律，
+有些内容不会在文中重复出现。
+```
+
 ## 0。Termux
 
 ### Termux 简介
@@ -38,6 +68,7 @@ So：tintin++ on termux for pkuxkx。
  使用python控制台来作为掌上电脑。</br>
  使用git 和 subversion管理项目。</br>
  使用frotz运行基于文本的游戏。</br>
+ 双指捏合缩放界面。
  
 ### 下载安装 Termux
 
@@ -45,20 +76,22 @@ So：tintin++ on termux for pkuxkx。
 
 - 访问[Termux](https://github.com/termux/termux-app)获取
 
-- 软件使用方法自行百度
-
 ### 安装vim git screen tintin++
 
-打开termux输入如下指令安装软件：
-> pkg up
+打开Termux输入如下指令安装**必须**软件：
+> pkg up -y
 </br>pkg install vim git screen tintin++ -y
 
+**按行复制命令后按回车执行！！！**
 
-注：linuxdeploy是一款能在安卓手机上利用chroot部署任意linux发行版的app（需要root权限、比termux更强大），使用linuxdeploy在手机上部署的chroot环境，比如Debian，使用apt(相当于pkg)指令安装完 tintin++ 的路径在`/usr/games/tt++`。
+安装完毕后，可直接跳转到screen转码。</br>
+速度慢可更换国内清华开源镜像站的源。
+
+注：Linux deploy是一款能在安卓手机上利用chroot部署任意linux发行版的app（需要root权限、比Termux更强大），使用linuxdeploy在手机上部署的chroot环境，比如Debian，使用apt(相当于pkg)指令安装完 tintin++ 的路径在`/usr/games/tt++`。
 
 由于Debian上tt版本比较老旧</br>
-也可以使用源码进行编译。
-
+也可以使用源码进行编译。</br>
+Termux不用看此段内容。
 ```
 Debian9编译安装tt++
 
@@ -77,6 +110,7 @@ make
 4.复制可执行文件到/bin目录
 cp tt++ /bin
 ```
+Termux一般不用编译，仅列出方法。
 ```
 Termux编译安装tt++
 
@@ -97,39 +131,64 @@ cp tt++ $PREFIX/usr/bin/
 ```
 
 
-## 1。TERMUX键盘自定义
+## 1。Termux相关
 
 **++此步骤非必要++**
 
 个人使用Termux0.72版本(大于0.66版）
 
-如果使用style插件则签名必须一致
+如果使用style样式插件则签名必须一致
 
-建议使用apk编辑器签名后安装
+建议使用apk编辑器签名后安装。
+
+**++配置文件编辑方法如下++**
 
 使用vim文本编辑器编辑：
 
 > vim ~/.termux/termux.properties
 
-按i键开启插入，方向键控制光标：
+按字母i键开启插入模式，方向键控制光标：
 
 ```
 extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
 ```
-
+将以上内容复制粘贴到文本中，</br>
 修改完毕后按ESC键退出编辑模式：
 
 - 输入:wq保存
 - 或大写模式按两下ZZ键
 
-回到原版二行键盘
+回到原版二行工具条。
 
-根据tintin++官网介绍，termux可以使用组合宏键。
+注：根据[官网](https://tintin.sourceforge.io/android.php)介绍，termux可以使用组合宏键。
 
-**北大侠客行懒人专用键盘（行动需要手动按回车)**
+**++可根据需求对工具条进行定制++**
+
+以下是xgg@pkuxkx使用的工具条：
+
 ```
-extra-keys = [['ESC','=','-','st','sc','hp','cha','chat ','ENTER'],['ALT','PGUP','+','HOME','nw','n','ne','up','look'],['CTRL','PGDN','UP','END','w','enter','e','out','sleep'],['TAB','LEFT','DOWN','RIGHT','sw','s','se','down','orz']]
+extra-keys = [['ESC','ALT','PGUP','HOME','UP','END','chat ','ENTER'],['CTRL','TAB','PGDN','LEFT','DOWN','RIGHT','orz','BACKSPACE']]
 ```
+
+**++初始脚本使用++**
+
+> vim ~/.bashrc
+
+可将常用命令进行别名设置，</br>
+开启新窗口配置立即生效。</br>
+善用别名可大幅简化操作。
+
+```
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+alias tt='cd ~/tt && screen tt++ init.tt'
+alias ck='vim ~/.termux/termux.properties'
+```
+此处tt命令就可以快速进入游戏。
+
 ## 2。screen、vim中文乱码
 
 **tintin++原生不支持中文GBK编码</br>
@@ -137,18 +196,28 @@ extra-keys = [['ESC','=','-','st','sc','hp','cha','chat ','ENTER'],['ALT','PGUP'
 
 ### 利用screen给tt++转码
 
-- vim ~/.screenrc
+使用vim文本编辑器编辑：
 
-添加
+> vim ~/.screenrc
+
+按字母i键开启插入模式，方向键控制光标</br>
+添加如下内容后保存：
 ```
 defencoding GBK
 ```
+将以上内容复制粘贴到文本中，</br>
+修改完毕后按ESC键退出编辑模式：
+
+- 输入:wq保存
+- 或大写模式按两下ZZ键
+
+只玩游戏做到这一步即可。
 
 ### vim编辑脚本时中文乱码
 
-- vim ~/.vimrc
+> vim ~/.vimrc
 
-添加
+添加如下内容后保存：
 ```
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -156,6 +225,8 @@ set encoding=utf-8
 ```
 
 ### 手写脚本中文乱码转换编码
+
+按ESC键退出编辑模式后输入下列命令：
 
 > :set fileencoding=gb18030
 
@@ -183,6 +254,9 @@ set encoding=utf-8
 **注**：另可将配置先写入到文件，</br>
 然后使用配置文件启动游戏。
 ```
+1.新建文件
+vim init.tt
+2.添加如下内容后保存
 #split
 #config charset big5
 #event {SCREEN RESIZE} {#split}
@@ -200,37 +274,52 @@ set encoding=utf-8
 
 - tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
 
-- termux内建的termux-setup-storage接口可以在$home创建一个对内部存储的符号链接，我们可以直接访问内存卡或者建立相应目录的符号链接。
+- Termux内建的termux-setup-storage接口可以在$home创建一个对内部存储的符号链接，我们可以直接访问内存卡或者建立相应目录的符号链接。
 ```
-使用termux管理的流程（本地推荐）：
+使用Termux管理的流程（本地推荐）：
 
 1.建立符号链接
 输入：termux-setup-storage
 在弹出的权限要求中点击允许。
 2.访问内存卡中的tt目录
 cd $home/storage/shared/tt
-3.内存卡中tt目录的符号链接到当前目录
-ln -s storage/shared/tt ./tt
+3.内存卡中tt目录的符号链接到$home目录
+ln -s storage/shared/tt $home/tt
 4.通过符号链接进入内存卡的tt目录
 cd tt
 ```
 ```
 使用git管理的流程（远程推荐）：
 
+1.克隆仓库
 git clone https://github.com/zixijian/tt.git tt
+2.进入仓库
 cd tt
+3.启动游戏
 screen tt++ init.tt
 
-更新新仓库内容输入指令：
+更新新仓库内容输入指令（未启动游戏时）：
 git pull
+
+注：这里是xgg@pkuxkx的机器人脚本。
 ```
+
 ### screen 管理进程
 
 - 组合键ctrl+a+d后台运行；
 - screen -list 显示后台列表；
-- screen -r <进程id> 恢复进程到前台；
+- screen -r <进程id或名称> 恢复进程到前台；
 
 **注**：screen还能指定名称管理。
+
+```
+按组合键ctrl+a后，输入：
+:sessionname xgg
+回车确定，
+按顺序按组合键ctrl+a+d进入后台，
+screen -r xgg
+返回游戏。
+```
 
 ## 4。游戏指南
 
