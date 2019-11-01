@@ -190,8 +190,8 @@ alias ck='vim ~/.termux/termux.properties'
 
 ## 2。screen、vim中文乱码
 
-__tintin++原生不支持中文GBK编码</br>
-使用screen进行转码__
+__Tintin++原生不支持GBK编码，</br>
+使用screen进行转码。__
 
 ### 利用screen给tt++转码
 
@@ -249,10 +249,7 @@ set encoding=utf-8
 
 > #split
 
-__Tintin++2.01.8版本以后需要添加event事件，</br>
-防止收回键盘后`screen redraw`异常__
-
-> #event {SCREEN RESIZE} {#split}
+此命令可分割出输入行及map显示区域。
 
 注：另可将配置先写入到文件，</br>
 然后使用配置文件启动游戏。
@@ -263,7 +260,6 @@ vim init.tt
 2.添加如下内容后保存
 #split
 #config charset big5
-#event {SCREEN RESIZE} {#split}
 #ses pku mud.pkuxkx.com 8080
 ```
 ### 进入游戏
