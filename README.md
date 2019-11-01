@@ -26,7 +26,7 @@ So：tintin++ on termux for pkuxkx。
 
 注：客户端用法与其他平台一致。
 
-### 怎么进入MUDs游戏？
+### 安卓怎么进入MUDs游戏？
 
 - 1.安装Termux
 
@@ -34,8 +34,8 @@ style插件非必选，可配置字体和主题风格。
 
 - 2.在Termux中安装必须软件及一些必要配置
 
-Termux本身不能运行MUDs游戏，必须安装mud客户端，比如tintin++、Go-Mud，
-环境配置可以帮助更好的游戏(比如解决乱码和快速进入游戏)。
+Termux本身不能运行MUDs游戏，必须安装mud客户端，比如：Tintin++、Go-Mud，
+环境配置可以提升使用体验(比如解决乱码和快速进入游戏)。
 
 - 3.配置文件管理
 
@@ -45,16 +45,12 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如tintin++�
 
 这时候启动游戏即可。
 
-```
-写给小白的话(老白们跳过)：
-
-不会只是暂时的，
-没有人天生什么就都懂，
-请细致地阅读文中内容，
-请合理地使用搜索引擎，
-请合理地联想相同的方法和规律，
+***
+请细致地阅读文中内容，</br>
+请合理地使用搜索引擎，</br>
+请合理地联想相同的方法和规律，</br>
 有些内容不会在文中重复出现。
-```
+***
 
 ## 0。Termux
 
@@ -68,7 +64,9 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如tintin++�
  使用python控制台来作为掌上电脑。</br>
  使用git 和 subversion管理项目。</br>
  使用frotz运行基于文本的游戏。</br>
- 双指捏合缩放界面。
+ 双指捏合缩放界面。</br>
+ 长按弹出菜单。</br>
+ PGDW PGUP上下翻页。
  
 ### 下载安装 Termux
 
@@ -78,19 +76,19 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如tintin++�
 
 ### 安装vim git screen tintin++
 
-打开Termux输入如下指令安装**必须**软件：
+打开Termux输入如下指令安装 __必须__ 软件：
 > pkg up -y
 </br>pkg install vim git screen tintin++ -y
 
-**按行复制命令后按回车执行！！！**
+__按行复制命令后按回车执行！！！__
 
-安装完毕后，可直接跳转到screen转码。</br>
-速度慢可更换国内清华开源镜像站的源。
+安装完毕后，可跳转到screen转码部分。
 
 注：Linux deploy是一款能在安卓手机上利用chroot部署任意linux发行版的app（需要root权限、比Termux更强大），使用linuxdeploy在手机上部署的chroot环境，比如Debian，使用apt(相当于pkg)指令安装完 tintin++ 的路径在`/usr/games/tt++`。
 
 由于Debian上tt版本比较老旧</br>
-也可以使用源码进行编译。</br>
+也可以使用源码进行编译安装。</br>
+
 Termux不用看此段内容。
 ```
 Debian9编译安装tt++
@@ -133,7 +131,7 @@ cp tt++ $PREFIX/usr/bin/
 
 ## 1。Termux相关
 
-**++此步骤非必要++**
+__此步骤非必要__
 
 个人使用Termux0.72版本(大于0.66版）
 
@@ -141,7 +139,7 @@ cp tt++ $PREFIX/usr/bin/
 
 建议使用apk编辑器签名后安装。
 
-**++配置文件编辑方法如下++**
+__配置文件编辑方法如下__
 
 使用vim文本编辑器编辑：
 
@@ -162,7 +160,7 @@ extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT
 
 注：根据[官网](https://tintin.sourceforge.io/android.php)介绍，termux可以使用组合宏键。
 
-**++可根据需求对工具条进行定制++**
+__可根据需求对工具条进行定制__
 
 以下是xgg@pkuxkx使用的工具条：
 
@@ -170,15 +168,16 @@ extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT
 extra-keys = [['ESC','ALT','PGUP','HOME','UP','END','chat ','ENTER'],['CTRL','TAB','PGDN','LEFT','DOWN','RIGHT','orz','BACKSPACE']]
 ```
 
-**++初始脚本使用++**
+__个性化设置__
 
 > vim ~/.bashrc
 
-可将常用命令进行别名设置，</br>
+Termux中可将常用命令设置别名，</br>
 开启新窗口配置立即生效。</br>
 善用别名可大幅简化操作。
 
 ```
+export PS1='[\w]\$ '
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
 alias ls='ls $LS_OPTIONS'
@@ -187,16 +186,20 @@ alias l='ls $LS_OPTIONS -lA'
 alias tt='cd ~/tt && screen tt++ init.tt'
 alias ck='vim ~/.termux/termux.properties'
 ```
-此处tt命令就可以快速进入游戏。
+此处`tt`命令就可以快速进入游戏。
 
 ## 2。screen、vim中文乱码
 
-**tintin++原生不支持中文GBK编码</br>
-使用screen进行转码**
+__tintin++原生不支持中文GBK编码</br>
+使用screen进行转码__
 
 ### 利用screen给tt++转码
 
-使用vim文本编辑器编辑：
+> echo defencoding GBK > ~/.screenrc
+
+以上命令效果等同于下列操作。
+
+或使用vim文本编辑器编辑：
 
 > vim ~/.screenrc
 
@@ -211,7 +214,7 @@ defencoding GBK
 - 输入:wq保存
 - 或大写模式按两下ZZ键
 
-只玩游戏做到这一步即可。
+__只玩游戏做到这一步即可。__
 
 ### vim编辑脚本时中文乱码
 
@@ -233,9 +236,10 @@ set encoding=utf-8
 ## 3。初始init.tt脚本
 
 ### 利用screen启动tintin++客户端
+
 > screen tt++
 
-连接服务端使用#ses命令</br>
+连接服务端使用`#ses`命令</br>
 可选填账号密码参数，使用 ; 间隔
 ```
 例:
@@ -245,14 +249,14 @@ set encoding=utf-8
 
 > #split
 
-**最新的tt++2.01.8需要添加event
-</br>
-防止收回键盘后`screen redraw`异常**
+__Tintin++2.01.8版本以后需要添加event事件，</br>
+防止收回键盘后`screen redraw`异常__
 
 > #event {SCREEN RESIZE} {#split}
 
-**注**：另可将配置先写入到文件，</br>
+注：另可将配置先写入到文件，</br>
 然后使用配置文件启动游戏。
+
 ```
 1.新建文件
 vim init.tt
@@ -263,6 +267,7 @@ vim init.tt
 #ses pku mud.pkuxkx.com 8080
 ```
 ### 进入游戏
+
 > screen tt++ init.tt
 
 ### 管理配置文件
@@ -310,7 +315,7 @@ git pull
 - screen -list 显示后台列表；
 - screen -r <进程id或名称> 恢复进程到前台；
 
-**注**：screen还能指定名称管理。
+注：screen还能指定名称管理。
 
 ```
 按组合键ctrl+a后，输入：
@@ -323,37 +328,33 @@ screen -r xgg
 
 ## 4。游戏指南
 
-**Termux使用MXP验证fullme时**
-</br>
-**长按屏幕提取url再长按跳转到浏览器**
-
-Termux可以直接调用浏览器访问链接
+Termux可以直接调用浏览器访问链接，
+此处可快速验证fullme。
 
 > termux-open-url <链接>
 
-tintin++可以写触发器获取链接
+Tintin++可以写触发器获取链接
 ```
+#nop 简写;
 #alias {fm} {fullme};
+#nop 打印链接;
 #alias {slink} {#showme $link};
+#nop 手动调用浏览器;
 #alias {mxp} {#sys termux-open-url $link};
 #act {http://pkuxkx.com/antirobot/robot.php?filename=%1}
 {
     #var link {http://pkuxkx.com/antirobot/robot.php?filename=%1};
-    #sys termux-open-url $link;
+   #nop #sys termux-open-url $link;
 }
 #act {http://pkuxkx.net/antirobot/robot.php?filename=%1}
 {
     #var link {http://pkuxkx.net/antirobot/robot.php?filename=%1};
-    #sys termux-open-url $link;
+   #nop #sys termux-open-url $link;
 }
 ```
-**++新手推荐丐帮++**
-
-丐帮拜师从扬州广场开始
+__新手推荐丐帮污衣派__
 
 > enter shudong;bai qiu
-
-福利别忘了领哦
 
 更多游戏信息访问|[北侠Wiki](http://pkuxkx.net/wiki/)|[北侠论坛](http://pkuxkx.net/forum/)|
 
@@ -361,15 +362,13 @@ tintin++可以写触发器获取链接
 
 ### 逍遥行(城际公交)
 
-**大部分地区可直接触发定位**
+__指令必须从地标地点出发。__
 
-命令`gt`查看逍遥行帮助
+注:地标地点自动触发并显示节点信息。
 
-命令`gt list`查看可去地点信息
-
-命令`inquire list`查看地标房间信息
-
-**Termux的xterm终端使用</br>PGDW PGUP上下翻页查看信息**
+__命令`gt`查看逍遥行帮助，</br>
+命令`gt list`查看可去地点信息，</br>
+命令`inquire list`查看地标房间信息。__
 
 ### 机器人实例：
 
