@@ -133,13 +133,13 @@ cp tt++ $PREFIX/usr/bin/
 
 __此步骤非必要__
 
-个人使用Termux0.72版本(大于0.66版）
+自定义工具条Termux版本号需大于0.66，
 
-如果使用style样式插件则签名必须一致
+使用style样式插件则签名必须一致，
 
 建议使用apk编辑器签名后安装。
 
-__配置文件编辑方法如下__
+__工具条配置编辑方法如下__
 
 使用vim文本编辑器编辑：
 
@@ -157,7 +157,7 @@ extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT
 - 输入:wq保存
 - 或大写模式按两下ZZ键
 
-回到原版二行工具条。
+退出程序再进即可生效。
 
 注：根据[官网](https://tintin.sourceforge.io/android.php)介绍，Termux可以使用组合宏键。
 
