@@ -20,7 +20,7 @@ Termux是一个安卓系统上的终端模拟器，</br>
 Tintin++ 是一个跨平台的MUDs客户端。</br>
 
 北大侠客行可使用 Tintin++ 客户端连接，</br>
-Tinin++可以运行在Termux上。
+Tintin++可以运行在Termux上。
 
 So：tintin++ on termux for pkuxkx。
 
@@ -143,7 +143,8 @@ __配置文件编辑方法如下__
 
 使用vim文本编辑器编辑：
 
-> vim ~/.termux/termux.properties
+> mkdir ~/.termux</br>
+vim ~/.termux/termux.properties
 
 按字母i键开启插入模式，方向键控制光标：
 
@@ -158,7 +159,7 @@ extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT
 
 回到原版二行工具条。
 
-注：根据[官网](https://tintin.sourceforge.io/android.php)介绍，termux可以使用组合宏键。
+注：根据[官网](https://tintin.sourceforge.io/android.php)介绍，Termux可以使用组合宏键。
 
 __可根据需求对工具条进行定制__
 
@@ -273,7 +274,7 @@ vim init.tt
 
 - 或者安装ssh使用sftp或scp传输。
 
-- tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
+- Tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
 
 - Termux内建的termux-setup-storage接口可以在$home创建一个对内部存储的符号链接，我们可以直接访问内存卡或者建立相应目录的符号链接。
 ```
