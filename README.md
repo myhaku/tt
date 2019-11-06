@@ -276,26 +276,28 @@ vim init.tt
 
 - Tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
 
-- Termux内建的termux-setup-storage接口可以在$home创建一个对内部存储的符号链接，我们可以直接访问内存卡或者建立相应目录的符号链接。
+- Termux内建的termux-setup-storage接口可以在`$HOME`用户目录中创建一个对内部存储的符号链接，我们可以直接访问内存卡（内部存储）或者建立相应目录的符号链接。
 ```
 使用Termux管理的流程（本地推荐）：
 
 1.建立符号链接
 输入：termux-setup-storage
 在弹出的权限要求中点击允许。
-2.访问内存卡中的tt目录
-cd $home/storage/shared/tt
-3.内存卡中tt目录的符号链接到$home目录
-ln -s storage/shared/tt $home/tt
+2.访问内存卡中的tt目录（自建）
+cd $HOME/storage/shared/tt
+3.内存卡中tt目录的符号链接到用户目录
+ln -s $HOME/storage/shared/tt $HOME/tt
 4.通过符号链接进入内存卡的tt目录
-cd tt
+cd $HOME/tt
+
+注:此处也可将git仓库克隆到内存卡中。
 ```
 ```
 使用git管理的流程（远程推荐）：
 
-1.克隆仓库
+1.克隆仓库并指定文件夹名为tt
 git clone https://github.com/zixijian/tt.git tt
-2.进入仓库
+2.进入仓库（此处默认为用户目录）
 cd tt
 3.启动游戏
 screen tt++ init.tt

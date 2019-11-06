@@ -143,6 +143,10 @@
 #alias {sxa} {#class sxa read bot/sxa.tt};
 #alias {sxx} {#class sxa kill};
 
+#nop 天珠;
+#alias {tza} {#class tza read bot/tza.tt};
+#alias {tzx} {#class tza kill;#untic tza1};
+
 #nop 功德捐献;
 #alias {gda} {#class gda read bot/gda.tt;say 天不生我小乖乖，侠客万古长如夜};
 #alias {gdx} {#class gda kill};
