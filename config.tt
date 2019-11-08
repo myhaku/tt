@@ -1,22 +1,7 @@
-#CONFIG           {256 COLORS}  {OFF}
-#CONFIG           {AUTO TAB}  {5000}
-#CONFIG           {BUFFER SIZE}  {20000}
+#CONFIG           {CHARSET}  {BIG-5}
 #CONFIG           {CHARSET}  {BIG5}
 #CONFIG           {COLOR PATCH}  {ON}
-#CONFIG           {COMMAND COLOR}  {<078>}
-#CONFIG           {COMMAND ECHO}  {ON}
-#CONFIG           {CONNECT RETRY}  {15}
-#CONFIG           {HISTORY SIZE}  {1000}
-#CONFIG           {LOG}  {PLAIN}
 #CONFIG           {PACKET PATCH}  {0.8}
-#CONFIG           {REPEAT CHAR}  {!}
-#CONFIG           {REPEAT ENTER}  {OFF}
-#CONFIG           {SCROLL LOCK}  {ON}
-#CONFIG           {SPEEDWALK}  {OFF}
-#CONFIG           {TINTIN CHAR}  {#}
-#CONFIG           {VERBATIM}  {OFF}
-#CONFIG           {VERBATIM CHAR}  {\}
-#CONFIG           {VERBOSE}  {OFF}
 #CONFIG           {WORDWRAP}  {OFF}
 #PATHDIR         {n}  {s}  {1}
 #PATHDIR         {e}  {w}  {2}

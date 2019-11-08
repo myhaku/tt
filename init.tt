@@ -5,12 +5,13 @@
 #re goto.tt;
 #re emote.tt;
 
-#act {^#SESSION 'gts' ACTIVATED.} {#re init.tt};
-#gag {^#SESSION 'gts' ACTIVATED.};
+#event {SESSION ACTIVATED}
+{
+	#if {"%0" == "gts"} {#read init.tt}
+};
+
 #class tmp open;
-
 #alias pku {#class tmp kill;#re pku.tt};
-
 #class tmp close;
 
 #echo {%c%h} {light yellow};

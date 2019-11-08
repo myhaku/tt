@@ -52,12 +52,14 @@ set wimpy 30;
 #act {^http://pkuxkx.net/antirobot/robot.php?filename=%1}
 {
 	#var link {http://pkuxkx.net/antirobot/robot.php?filename=%1};
-#nop	#system sh bot/fullme.sh %1;
+  #nop mxp;
+  #nop	#system sh bot/fullme.sh %1;
 };
 
 #act {^http://pkuxkx.com/antirobot/robot.php?filename=%1}
 {
 	#var link {http://pkuxkx.com/antirobot/robot.php?filename=%1};
-#nop	#system sh bot/fullme.sh %1;
+  #nop mxp;
+  #nop	#system sh bot/fullme.sh %1;
 };
 
