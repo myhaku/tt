@@ -2,104 +2,104 @@
 
 # 导航
 
-|[ 总览 ](#总览)|[ 关于 ](#关于)|</br>
+|[ 总览 ](#总览)|[ 关于 ](#关于)|<br>
 |[ Action ](#action)
 |[ Alias ](#alias)
-|[ All ](#all)|</br>
+|[ All ](#all)|<br>
 |[ Bell ](#bell)
 |[ Break ](#break)
-|[ Buffer ](#buffer)|</br>
+|[ Buffer ](#buffer)|<br>
 |[ Case ](#case)
 |[ Chat](#chat)
 |[ Class](#class)
 |[ Colors ](#colors)
-|[ Cr ](#cr)|</br>
+|[ Cr ](#cr)|<br>
 |[ Commands](#commands)
 |[ Config ](#config)
 |[ Continue ](#continue)
-|[ Cursor ](#cursor)|</br>
+|[ Cursor ](#cursor)|<br>
 |[ Debug ](#debug)
 |[ Default ](#default)
-|[ Delay ](#delay)|</br>
+|[ Delay ](#delay)|<br>
 |[ Echo ](#echo)
 |[ Elseif ](#elseif)
-|[ End ](#end)|</br>
+|[ End ](#end)|<br>
 |[ Escape Codes ](#escape-codes)
-|[ Event ](#event)|</br>
+|[ Event ](#event)|<br>
 |[ Forall ](#forall)
 |[ Foreach ](#foreach)
 |[ Format ](#format)
-|[ Function ](#function)|</br>
+|[ Function ](#function)|<br>
 |[ Gag ](#gag)
 |[ Greeting ](#greeting)
-|[ Grep ](#Grep)|</br>
+|[ Grep ](#Grep)|<br>
 |[ Help ](#help)
 |[ Highlight ](#highlight)
-|[ History](#history)|</br>
+|[ History](#history)|<br>
 |[ If ](#if)
 |[ Ignore ](#ignore)
-|[ Info ](#info)|</br>
+|[ Info ](#info)|<br>
 |[ Keypad ](#keypad)
-|[ Kill ](#kill)|</br>
+|[ Kill ](#kill)|<br>
 |[ Line ](#line)
 |[ List ](#list)
 |[ Local ](#local)
 |[ Log ](#log)
-|[ Loop ](#loop)|</br>
+|[ Loop ](#loop)|<br>
 |[ Macro ](#macro)
 |[ Map ](#map)
-|[ Math ](#math)|</br>
+|[ Math ](#math)|<br>
 |[ Mathematics ](#mathematics)
-|[ Message ](#message)|</br>
-|[ Nop ](#nop)|</br>
+|[ Message ](#message)|<br>
+|[ Nop ](#nop)|<br>
 |[ Parse ](#parse)
 |[ Path ](#path)
 |[ Pathdir ](#pathdir)
 |[ Port ](#port)
-|[ Prompt ](#prompt)|</br>
+|[ Prompt ](#prompt)|<br>
 |[ Read ](#read)
 |[ Regex ](#Regex)
-|[Regular Expressions](#regular-expressions)|</br>
+|[Regular Expressions](#regular-expressions)|<br>
 |[ Repeat ](#repeat)
 |[ Replace ](#replace)
 |[ Return ](#return)
-|[ Run ](#run)|</br>
+|[ Run ](#run)|<br>
 |[ Scan ](#scan)
 |[ Script ](#script)
 |[ Send ](#send)
-|[ Session](#session)|</br>
+|[ Session](#session)|<br>
 |[ Session Name](#session-name)
 |[ Showme ](#showme)
-|[ Snoop ](#snoop)|</br>
+|[ Snoop ](#snoop)|<br>
 |[ Speedwalk ](#speedwalk)
 |[ Split ](#split)
 |[ SSL ](#ssl)
-|[ Substitute ](#substitute)|</br>
+|[ Substitute ](#substitute)|<br>
 |[ Suspend ](#suspend)
 |[ Switch ](#switch)
-|[ System ](#system)|</br>
+|[ System ](#system)|<br>
 |[ Tab ](#tab)
 |[ Textin ](#textin)
-|[ Ticker ](#ticker)|</br>
-|[ Variable ](#variable)|</br>
+|[ Ticker ](#ticker)|<br>
+|[ Variable ](#variable)|<br>
 |[ While ](#while)
 |[ WildCards ](#wildcards)
-|[ Write ](#write)|</br>
-|[ Zap ](#zap)|</br>
+|[ Write ](#write)|<br>
+|[ Zap ](#zap)|<br>
 ***
 
 # 总览
 
 - **TinTin++**
 
-这是一个MUDs游戏客户端，支持：</br>
+这是一个MUDs游戏客户端，支持：<br>
 `Mac OS X,Android,Linux,Windows`。
 
 在这个页面上，你会发现使用TinTin++的介绍。其他信息可以在各个帮助部分找到。
 
 - **启动及结束**
 
-启动 TinTin++ 的语法是: </br>
+启动 TinTin++ 的语法是: <br>
 > ./tt++ 【配置文件名】
 
 您可以在下面的文件部分阅读更多关于命令文件的信息。不过，记住一件事。启动 TinTin++ 时定义的所有操作、别名、替换等都是由所有会话继承的。
@@ -113,21 +113,21 @@
 首先，我将解释一些非常基本和重要的功能:
 
 所有 TinTin++ 命令都以 “#” 开头。
-</br>
+<br>
 (这可以用 #config 来改变)。
 
-> 示例: #help </br>
+> 示例: #help <br>
     -- #help是客户端命令，不会发送到服务端。
 
 键入时，TinTin++ 的所有命令可以缩写。
 
-> 示例: #he </br>
+> 示例: #he <br>
     -- #he 等效于 #help。
 
 所有命令都可以用 ';' 分隔。
 
 > 示例: w;u;look;say dzp我要买药！ 
-</br>-- 递归执行这四条命令。
+<br>-- 递归执行这四条命令。
 
 有三种方法可以转义符号";"。
 ```
@@ -143,10 +143,10 @@
 
 - **连接至MUDs服务端**
 
-命令: </br>
+命令: <br>
 #session {会话名} {mud ip} {端口}
 
-示例: </br>
+示例: <br>
 #session pku mud.pkuxkx.com 8080
 
 可以在上面示例末尾添加`;用户名;密码;`自动登录。
@@ -217,10 +217,10 @@ Split 命令将创建一个独立的输入和输出区域。
 #Action {告诉你} #bell 
 -- 当你得到一个通知时发出嘟嘟声。
 ```
-如果键入 “#ignore action on”，</br>
+如果键入 “#ignore action on”，<br>
 您可以让 TinTin++ 忽略触发。
 
-通过键入 “#debug action on”，</br>
+通过键入 “#debug action on”，<br>
 您可以看到 TinTin++ 在触发时执行的命令。
 
 您可以使用 #unaction 命令删除操作。
@@ -251,7 +251,7 @@ Split 命令将创建一个独立的输入和输出区域。
 
 如果您在键入一些实际上仅由这些字母组成的命令时遇到问题，请键入大写字母。例如，当检查新闻NEWS或被要求输入 NEW 作为你的名字时。
 
-您必须启用快速行走才能使用本功能:</br>
+您必须启用快速行走才能使用本功能:<br>
 `#config speedwalk on/off`
 
 - **定时器**
@@ -276,10 +276,10 @@ Split 命令将创建一个独立的输入和输出区域。
 
 文件命令:
 
-#read 文件名 </br>
+#read 文件名 <br>
 -- 读取并执行文件。
 
-#Write 文件名 </br>
+#Write 文件名 <br>
 -- 将当前会话已知的所有操作/别名/替换写入文件。
 
 - **重复命令**
@@ -290,18 +290,18 @@ Split 命令将创建一个独立的输入和输出区域。
 
 例子:
 
-#5 eat yao </br>
+#5 eat yao <br>
 -- 如果你受伤了，吃药可以恢复伤势。
 
-#10 {buy yao;eat yao} </br>
+#10 {buy yao;eat yao} <br>
 -- 重复这两个命令 10 次。
 
 - **历史回溯**
 
 TinTin++ 具有 csh 历史特性的有限子集。
 
-!  -- 重复最后一个命令。 </br>
-!Cast -- 重复从 cast 开始的最后一个命令。 </br>
+!  -- 重复最后一个命令。 <br>
+!Cast -- 重复从 cast 开始的最后一个命令。 <br>
 Ctrl-r -- 进入反向历史搜索模式。
 
 - **路径记录**
@@ -330,11 +330,11 @@ Path 的命令:
 
 上面的触发可以有效的帮助记录路径。
 
-游戏中的例子:</br>
-你想要快速的完成任务后返回，</br>
-键入: #path new</br>
-然后行走并杀掉任务目标后，</br>
-键入: #path save backward tmp;$tmp</br>
+游戏中的例子:<br>
+你想要快速的完成任务后返回，<br>
+键入: #path new<br>
+然后行走并杀掉任务目标后，<br>
+键入: #path save backward tmp;$tmp<br>
 还可以建立别名，这应该可以节省不少时间。
 
 - **帮助**
@@ -367,7 +367,7 @@ Path 的命令:
 #action {~^\e[1;37m%1} 
 {#showme {--用粗体白色显示: %1}}
 ```
-Showme命令可以触发操作。</br>
+Showme命令可以触发操作。<br>
 如果你不想让showme被触发使用: 
 ```
 #line ignore #showme {text}
@@ -621,7 +621,7 @@ k blue smurf with battle axe
 }
 ```
 
-这个函数返回相反的方向。</br>
+这个函数返回相反的方向。<br>
 `@Reverse_direction{north}`将回返`south`。
 
 另可参见: [Default](#default), [Else](#else), [Elseif](#elseif), [If](#if), [Switch](#switch) and [Regex](#regex).
@@ -756,7 +756,7 @@ DND 代表 “不打扰”，此命令切换 DND 状态。启用后，所有新�
 
 ## Class
 
-> 语法: </br> 
+> 语法: <br> 
 #class {name} {open|close|read filename|write filename|kill}
 
 Class命令可以方便的管理成组的列表。
@@ -817,10 +817,10 @@ Class命令可以方便的管理成组的列表。
 
 对于 xterm 256 颜色支持：
 
-对于 RGB 前景色使用 `<aaa>到<fff>`，</br>
+对于 RGB 前景色使用 `<aaa>到<fff>`，<br>
 对于 RGB 背景色使用 `<AAA>到<FFF>`。
 
-对于灰度前景色，使用 `<g00>到<g23>`; </br>
+对于灰度前景色，使用 `<g00>到<g23>`; <br>
 对于灰度背景色，使用 `<G00>到<G23>`。
 ```
 示例:
@@ -836,15 +836,15 @@ Class命令可以方便的管理成组的列表。
 
 **Truecolor**
 
-对于 12 位 truecolor 真彩色，</br>
-前景色使用 `<F000>到<FFFF>`，</br>
-背景色使用 `<B000>到<BFFF>`。</br>
+对于 12 位 truecolor 真彩色，<br>
+前景色使用 `<F000>到<FFFF>`，<br>
+背景色使用 `<B000>到<BFFF>`。<br>
 第一个字符表示 F (前景) 或 B (背景)，接下来的三个字符是十六进制 RGB 值。这允许 4096 种不同的颜色。**请记住，并非所有终端都支持 truecolor**。
 
-对于 24 位 truecolor 前景色，使用`\e[38;2;R;G;Bm`，其中 RGB 是 0 到 255 之间的红色/绿色/蓝色强度。</br>
+对于 24 位 truecolor 前景色，使用`\e[38;2;R;G;Bm`，其中 RGB 是 0 到 255 之间的红色/绿色/蓝色强度。<br>
 例如: `\e[37;2;50;100;150m`。
 
-对于 24 位 truecolor 背景颜色，</br>
+对于 24 位 truecolor 背景颜色，<br>
 请使用 `\e[48;2;R;G;Bm`。
 
 另可参见: [ Escape Codes ](#escape-codes), [Mathematics](#mathematics) and [Regular Expressions](#regular-expressions)
@@ -1186,7 +1186,7 @@ hello xgg
 
 **Chronological Events**
 
-所有按时间顺序排列的事件设置以下参数:</br> 
+所有按时间顺序排列的事件设置以下参数:<br> 
 %0-year使用 4 位数字填充，%1-month使用 2 个零填充数字，%2-week使用 2 个零填充数字，%3-day在month中使用 2 个零填充数字， %4-hour，使用 2 个零填充数字，%5-minute使用 2 个零填充数字，%6-second使用 2 个零填充数字。
 
 **DATE <MONTH-DAY> [HOUR:MINUTE]**
@@ -1385,7 +1385,7 @@ ZMP 子协商上触发此事件。根据 ZMP 包，您必须将包附加到事�
 
 ## Foreach
 
-> 语法: </br>
+> 语法: <br>
 #foreach {list} {variable} {commands}
 
 Foreach 命令就像一个简化的循环。列表中的每个单词将在执行时存储在变量中，并可以在命令部分中使用。
@@ -1408,7 +1408,7 @@ Foreach 命令就像一个简化的循环。列表中的每个单词将在执行
 
 ## Format
 
-> 语法: </br>
+> 语法: <br>
 #format {variable} {format} {argument1} {argument2} {etc}
 
 此命令允许您像 C 中的 sprintf 函数一样格式化文本。结果将存储在给定的变量中。格式部分可以包含文本和参数变量。在参数部分，你最多可以给出最多 20 个参数。另请参见 sprintf 上的 linux man 文件。
@@ -1838,8 +1838,8 @@ TinTin有几种不同类型的列表，它们的行为方式相当普遍。为�
 
 **Simple Variables**
 
-> 示例: </br>
-#variable {simple} {Hello World!}</br>
+> 示例: <br>
+#variable {simple} {Hello World!}<br>
 #showme $simple
 
 要查看 “简单” 变量是否存在，您可以使用 &simple，如果变量不存在，它将显示 0，如果变量存在，它将显示变量的索引。
@@ -1848,13 +1848,13 @@ TinTin有几种不同类型的列表，它们的行为方式相当普遍。为�
 
 变量名需要有字母、数字和下划线。如果您需要使用非标准变量名，可以使用大括号。
 
-> 示例:</br>
-#variable {:)} {Happy!};</br>
+> 示例:<br>
+#variable {:)} {Happy!};<br>
 #showme ${:)}
 
 可以使用它们的索引访问变量。虽然对于表来说主要是有用的，但是对于简单的变量来说可以这样做。第一个变量使用 + 1，第二个变量使用 + 2，等等。最后一个变量使用-1，第二个最后一个变量使用-2，等等。
 
-> 示例: </br>
+> 示例: <br>
 #showme 第一个变量是: ${+1}
 
 **Removing Variables**
@@ -1943,7 +1943,7 @@ TinTin有几种不同类型的列表，它们的行为方式相当普遍。为�
 
 除了数字排序之外，表格按字母顺序排序。如果你想自己确定排序顺序，你可以使用 #list 命令来帮助你将表用作数组。
 
-> 示例: </br>
+> 示例: <br>
 #action {%1 chats %2} {#list chats add {%0}}
 
 每次收到聊天时，它都会被添加到 “chats” 列表变量的末尾。在内部，这看起来像`#variable {chats}={{1}{xgg chats Hi}{2}{dzp chats Hi xgg}{3}{xgg chats Bye}{4}{dzp chats xgg bye}}`。
@@ -1952,7 +1952,7 @@ TinTin有几种不同类型的列表，它们的行为方式相当普遍。为�
 
 **The list command**
 
-> 语法: </br>
+> 语法: <br>
 #list {\<variable>} {\<option>} {\<arguments>}
 
 TinTin++ 中的列表是具有数字索引的表 (又名关联数组)。List 命令通过在删除或插入项目时自动重新编号项目来更容易模拟数组行为。
@@ -2022,7 +2022,7 @@ TinTin++ 中的列表是具有数字索引的表 (又名关联数组)。List 命
 
 #While 将对第一个参数执行 if 检查，如果结果为 true，则执行第二个参数中的命令。然后，它再次对第一个参数执行 if 检查。它将继续重复，直到 if 检查返回 0，或者用控制流命令中断循环。
 
-#\<Number> 将执行提供的参数 “number” 次。</br>
+#\<Number> 将执行提供的参数 “number” 次。<br>
 例如:`#4 #showme beep!\A`
 
 下面是一些例子：
@@ -2030,7 +2030,7 @@ TinTin++ 中的列表是具有数字索引的表 (又名关联数组)。List 命
 示例:
 #list friends create {bob;bubba;zorro}
 ```
-在内部，这看起来像： </br>`{{1}{bob}{2}{bubba}{3}{zorro}}`</br>可以通过各种方式解析列表。
+在内部，这看起来像： <br>`{{1}{bob}{2}{bubba}{3}{zorro}}`<br>可以通过各种方式解析列表。
 ```
 示例: 
 #foreach {$friends[%*]} {name} 
@@ -2275,8 +2275,8 @@ Insert 命令对于添加名为 void room 的间隔房间很有用。房间经�
 
 也可以隐藏整个区域，直到你输入它，为了做到这一点，你也想设置隐藏标志。例如:#map insert north {void;hide}。
 
-**#map exit {exit}</br>
-{COMMAND|DIRECTION|FLAG|GET|NAME|SAVE|SET|VNUM}</br>
+**#map exit {exit}<br>
+{COMMAND|DIRECTION|FLAG|GET|NAME|SAVE|SET|VNUM}<br>
 {argument}**
 
 默认情况下，退出命令设置为退出名称。如果你想自动打开门，你可以使用以下方式: #map exit {e} {command} {open door;e}。当使用 #map run 时，它将执行 {open door;e} 而不是 {e}。
@@ -2287,8 +2287,8 @@ Insert 命令对于添加名为 void room 的间隔房间很有用。房间经�
 
 在给定位置执行命令。如果位置不存在，则不执行命令。如果你想遍历所有 vnums 并访问所有房间来执行某种操作，这将非常有用。
 
-**#map color</br>
-{BACKGROUND|EXIT|HERE|PATH|ROOM}</br>
+**#map color<br>
+{BACKGROUND|EXIT|HERE|PATH|ROOM}<br>
 {COLOR CODE}**
 
 设置颜色。要将背景设置为蓝色，您可以使用 #map color background <884>。要将房间颜色设置为暗红色，您可以使用 #map color room <218>。
@@ -2307,8 +2307,8 @@ Insert 命令对于添加名为 void room 的间隔房间很有用。房间经�
 
 #Map dig {exit} {vnum} 将在给定方向创建一个新的出口，该出口指向具有给定 vnum 的房间。如果这个房间不存在，将创建一个带有这个 vnum 的新房间。
 
-**#map exit {exit}</br>
-{COMMAND|DIRECTION|FLAG|GET|NAME|SAVE|SET|VNUM}</br>
+**#map exit {exit}<br>
+{COMMAND|DIRECTION|FLAG|GET|NAME|SAVE|SET|VNUM}<br>
 {argument}**
 
 #Map exit {exit} {NAME} {argument} 将设置移动命令。如果名称设置为 “and”，并且键入 “and”，这将使您跟随退出。实际执行的移动命令可以用 #map exit {exit} {command} 设置。名称和命令通常是相同的。
@@ -2367,8 +2367,8 @@ mapper会找到位置。路径存储在 #path 中。该位置可以存在多个�
 ```
 Goto、link、list、run、delete、at 和 link 命令也可以使用这些搜索选项。delete和dig命令只接受 vnum 。
 
-**#map flag </br>
-{ASCIIGRAPHICS|ASCIIVNUMS|NOFOLLOW|STATIC|VTMAP}</br> 
+**#map flag <br>
+{ASCIIGRAPHICS|ASCIIVNUMS|NOFOLLOW|STATIC|VTMAP}<br> 
 {ON|OFF}**
 
 ASCIIGRAPHICS: 默认情况下启用此标志，并绘制一张有点宽敞的地图，显示 NE SE SW NW 出口、单向出口、上下出口和房间符号。禁用时，它将默认为地图图例，该图例使用紧凑的 UTF-8 框绘图字符来显示和退出。
@@ -2727,7 +2727,7 @@ Path 命令是一种快速简单的方法，可以记录您的移动，并创建
 ```
 **#path {del}**
 
-移除路径中的最后一个移动。</br>
+移除路径中的最后一个移动。<br>
 这在撞墙时十分有用。
 ```
 示例: 
@@ -3277,7 +3277,7 @@ Speedwalking 允许您键入不以分号分隔的多个方向，现在它允许�
 
 > 示例: 2s5w3s3w2nw
 
-如果没有打开快速行走，你需要输入:</br> s;s;w;w;w;w;w;s;s;s;w;w;w;n;n;w
+如果没有打开快速行走，你需要输入:<br> s;s;w;w;w;w;w;s;s;s;w;w;w;n;n;w
 
 如果你想使用.2s5w3s3w2w 来执行快速行走，你可以尝试下面的脚本。
 ```
@@ -3539,10 +3539,10 @@ While 命令的工作方式类似于 c 中的 while 命令。一旦条件等于 
 
 # 关于
 ***
-**文档来自[TinTin++官网](https://tintin.sourceforge.io/)**</br>
+**文档来自[TinTin++官网](https://tintin.sourceforge.io/)**<br>
 
-**翻译者：xgg@pkuxkx**</br>
-**贡献者：dzp@pkuxkx**</br>
+**翻译者：xgg@pkuxkx**<br>
+**贡献者：dzp@pkuxkx**<br>
 
 **继续阅读:[ 返回导航 ](#导航)**
 ***
