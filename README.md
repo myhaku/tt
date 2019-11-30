@@ -2,9 +2,9 @@
 
 |[Tintin++](https://tintin.sourceforge.io/)
 |[Termux](https://github.com/termux/termux-app)|
-</br>
+<br>
 |[Tintin++中文手册](./Wiki.md)|
-</br>
+<br>
 |[北侠官网](http://pkuxkx.net/)
 |[北侠Wiki](http://pkuxkx.net/wiki/)
 |[北侠论坛](http://pkuxkx.net/forum/)
@@ -12,14 +12,14 @@
 
 ### 这是做什么的？
 
-本仓库用于存储xgg@pkuxkx的游戏配置，</br>
+本仓库用于存储xgg@pkuxkx的游戏配置，<br>
 以及部分相关脚本和文档。
 
-北大侠客行是一个MUDs文字游戏，</br>
-Termux是一个安卓系统上的终端模拟器，</br>
-Tintin++ 是一个跨平台的MUDs客户端。</br>
+北大侠客行是一个MUDs文字游戏，<br>
+Termux是一个安卓系统上的终端模拟器，<br>
+Tintin++ 是一个跨平台的MUDs客户端。<br>
 
-北大侠客行可使用 Tintin++ 客户端连接，</br>
+北大侠客行可使用 Tintin++ 客户端连接，<br>
 Tintin++可以运行在Termux上。
 
 So：tintin++ on termux for pkuxkx。
@@ -46,9 +46,9 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如：Tintin+
 这时候启动游戏即可。
 
 ***
-请细致地阅读文中内容，</br>
-请合理地使用搜索引擎，</br>
-请合理地联想相同的方法和规律，</br>
+请细致地阅读文中内容，<br>
+请合理地使用搜索引擎，<br>
+请合理地联想相同的方法和规律，<br>
 有些内容不会在文中重复出现。
 ***
 
@@ -56,16 +56,16 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如：Tintin+
 
 ### Termux 简介
 
-> 安卓系统高级终端模拟器。</br>
- 使用bash 和 zsh。</br>
- 使用nano 和 vim编辑文件。</br>
- 通过ssh访问服务器。</br>
- 使用gcc和clang编译代码。</br>
- 使用python控制台来作为掌上电脑。</br>
- 使用git 和 subversion管理项目。</br>
- 使用frotz运行基于文本的游戏。</br>
- 双指捏合缩放界面。</br>
- 长按弹出菜单。</br>
+> 安卓系统高级终端模拟器。<br>
+ 使用bash 和 zsh。<br>
+ 使用nano 和 vim编辑文件。<br>
+ 通过ssh访问服务器。<br>
+ 使用gcc和clang编译代码。<br>
+ 使用python控制台来作为掌上电脑。<br>
+ 使用git 和 subversion管理项目。<br>
+ 使用frotz运行基于文本的游戏。<br>
+ 双指捏合缩放界面。<br>
+ 长按弹出菜单。<br>
  PGDW PGUP上下翻页。
  
 ### 下载安装 Termux
@@ -78,7 +78,7 @@ Termux本身不能运行MUDs游戏，必须安装mud客户端，比如：Tintin+
 
 打开Termux输入如下指令安装 __必须__ 软件：
 > pkg up -y
-</br>pkg install vim git screen tintin++ -y
+<br>pkg install vim git screen tintin++ -y
 
 __按行复制命令后按回车执行！！！__
 
@@ -86,8 +86,8 @@ __按行复制命令后按回车执行！！！__
 
 注：Linux deploy是一款能在安卓手机上利用chroot部署任意linux发行版的app（需要root权限、比Termux更强大），使用linuxdeploy在手机上部署的chroot环境，比如Debian，使用apt(相当于pkg)指令安装完 tintin++ 的路径在`/usr/games/tt++`。
 
-由于Debian上tt版本比较老旧</br>
-也可以使用源码进行编译安装。</br>
+由于Debian上tt版本比较老旧<br>
+也可以使用源码进行编译安装。<br>
 
 Termux不用看此段内容。
 ```
@@ -143,7 +143,7 @@ __工具条配置编辑方法如下__
 
 使用vim文本编辑器编辑：
 
-> mkdir ~/.termux</br>
+> mkdir ~/.termux<br>
 vim ~/.termux/termux.properties
 
 按字母i键开启插入模式，方向键控制光标：
@@ -151,7 +151,7 @@ vim ~/.termux/termux.properties
 ```
 extra-keys = [['ESC','+','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
 ```
-将以上内容复制粘贴到文本中，</br>
+将以上内容复制粘贴到文本中，<br>
 修改完毕后按ESC键退出编辑模式：
 
 - 输入:wq保存
@@ -173,8 +173,8 @@ __个性化设置__
 
 > vim ~/.bashrc
 
-Termux中可将常用命令设置别名，</br>
-开启新窗口配置立即生效。</br>
+Termux中可将常用命令设置别名，<br>
+开启新窗口配置立即生效。<br>
 善用别名可大幅简化操作。
 
 ```
@@ -191,7 +191,7 @@ alias ck='vim ~/.termux/termux.properties'
 
 ## 2。screen、vim中文乱码
 
-__Tintin++原生不支持GBK编码，</br>
+__Tintin++原生不支持GBK编码，<br>
 使用screen进行转码。__
 
 ### 利用screen给tt++转码
@@ -204,12 +204,12 @@ __Tintin++原生不支持GBK编码，</br>
 
 > vim ~/.screenrc
 
-按字母i键开启插入模式，方向键控制光标</br>
+按字母i键开启插入模式，方向键控制光标<br>
 添加如下内容后保存：
 ```
 defencoding GBK
 ```
-将以上内容复制粘贴到文本中，</br>
+将以上内容复制粘贴到文本中，<br>
 修改完毕后按ESC键退出编辑模式：
 
 - 输入:wq保存
@@ -240,7 +240,7 @@ set encoding=utf-8
 
 > screen tt++
 
-连接服务端使用`#ses`命令</br>
+连接服务端使用`#ses`命令<br>
 可选填账号密码参数，使用 ; 间隔
 ```
 例:
@@ -252,7 +252,7 @@ set encoding=utf-8
 
 此命令可分割出输入行及map显示区域。
 
-注：另可将配置先写入到文件，</br>
+注：另可将配置先写入到文件，<br>
 然后使用配置文件启动游戏。
 
 ```
@@ -269,7 +269,7 @@ vim init.tt
 
 ### 管理配置文件
 
-- 此处可将配置文件使用git上传至github，</br>
+- 此处可将配置文件使用git上传至github，<br>
 这样更换环境后克隆仓库即可快速使用配置。
 
 - 或者安装ssh使用sftp或scp传输。
@@ -365,8 +365,8 @@ __指令必须从地标地点出发。__
 
 注:地标地点自动触发并显示节点信息。
 
-__命令`gt`查看逍遥行帮助，</br>
-命令`gt list`查看可去地点信息，</br>
+__命令`gt`查看逍遥行帮助，<br>
+命令`gt list`查看可去地点信息，<br>
 命令`inquire list`查看地标房间信息。__
 
 ### 机器人实例：
