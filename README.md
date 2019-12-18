@@ -89,7 +89,14 @@ __按行复制命令后按回车执行！！！__
 由于Debian上tt版本比较老旧<br>
 也可以使用源码进行编译安装。<br>
 
+Tintin 的 github 仓库地址如下：
+
+```
+git clone https://github.com/scandum/tintin.git
+```
+
 Termux不用看此段内容。
+
 ```
 Debian9编译安装tt++
 
@@ -109,6 +116,7 @@ make
 cp tt++ /bin
 ```
 Termux一般不用编译，仅列出方法。
+
 ```
 Termux编译安装tt++
 
@@ -166,7 +174,7 @@ __可根据需求对工具条进行定制__
 以下是xgg@pkuxkx使用的工具条：
 
 ```
-extra-keys = [['ESC','ALT','PGUP','HOME','UP','END','chat ','ENTER'],['CTRL','TAB','PGDN','LEFT','DOWN','RIGHT','orz','BACKSPACE']]
+extra-keys = [['ESC','ALT','PGUP','HOME','UP','END','chat ','ENTER'],['TAB','CTRL','PGDN','LEFT','DOWN','RIGHT','orz','BACKSPACE']]
 ```
 
 __个性化设置__
@@ -206,6 +214,7 @@ __Tintin++原生不支持GBK编码，<br>
 
 按字母i键开启插入模式，方向键控制光标<br>
 添加如下内容后保存：
+
 ```
 defencoding GBK
 ```
@@ -222,6 +231,7 @@ __只玩游戏做到这一步即可。__
 > vim ~/.vimrc
 
 添加如下内容后保存：
+
 ```
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -242,10 +252,12 @@ set encoding=utf-8
 
 连接服务端使用`#ses`命令<br>
 可选填账号密码参数，使用 ; 间隔
+
 ```
 例:
 #ses pku mud.pkuxkx.com 8080;username;password;
 ```
+
 ### 分屏
 
 > #split
@@ -277,6 +289,7 @@ vim init.tt
 - Tintin++官网提供了从电脑端`wintin++`使用chat传输配置的方法。
 
 - Termux内建的termux-setup-storage接口可以在`$HOME`用户目录中创建一个对内部存储的符号链接，我们可以直接访问内存卡（内部存储）或者建立相应目录的符号链接。
+
 ```
 使用Termux管理的流程（本地推荐）：
 
@@ -292,6 +305,7 @@ cd $HOME/tt
 
 注:此处也可将git仓库克隆到内存卡中。
 ```
+
 ```
 使用git管理的流程（远程推荐）：
 
@@ -332,7 +346,8 @@ Termux可以直接调用浏览器访问链接，
 
 > termux-open-url <链接>
 
-Tintin++可以写触发器获取链接
+Tintin++可以写触发器获取链接<br>
+
 ```
 #nop 简写;
 #alias {fm} {fullme};
@@ -343,14 +358,16 @@ Tintin++可以写触发器获取链接
 #act {http://pkuxkx.com/antirobot/robot.php?filename=%1}
 {
     #var link {http://pkuxkx.com/antirobot/robot.php?filename=%1};
-   #nop #sys termux-open-url $link;
+    #nop 此处#nop取消可以实时调用;
+    #nop #sys termux-open-url $link;
 }
 #act {http://pkuxkx.net/antirobot/robot.php?filename=%1}
 {
     #var link {http://pkuxkx.net/antirobot/robot.php?filename=%1};
-   #nop #sys termux-open-url $link;
+    #nop #sys termux-open-url $link;
 }
 ```
+
 __新手推荐丐帮污衣派__
 
 > enter shudong;bai qiu
