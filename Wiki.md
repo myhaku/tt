@@ -1578,13 +1578,17 @@ Highlight 命令将向 highlight 列表中添加一条消息。如果消息匹�
 如果你的终端支持 256 种颜色，额外的颜色代码是: azure, ebony, jade, lime, orange, pink, silver, tan, violet, light azure, light ebony, light jade, light lime, light orange, light pink, light silver, light tan, light violet。
 
 您也可以使用颜色代码[color codes](#colors)。
+
 ```
 示例: 
-#high {^{You|Your}%*} {light cyan}
+#high {^{你|你的}%*} {light cyan}
 ```
-这将在浅青色中突出以 “你” 和 “你” 开头的线条。在 pvp 战斗中发现失明或被诅咒很有用。
 
-> 示例: #high {%* tells you '%*'} {<ace>}
+这将用浅青色突出以 “你” 和 “你的” 开头的行。在 pvp 战斗中发现失明或被诅咒很有用。
+
+```
+示例: #high {%* tells you '%*'} {<ace>}
+```
 
 注释: 您可以使用 #unhighlight 命令删除高亮显示。
 
