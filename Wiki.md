@@ -1587,7 +1587,8 @@ Highlight 命令将向 highlight 列表中添加一条消息。如果消息匹�
 这将用浅青色突出以 “你” 和 “你的” 开头的行。在 pvp 战斗中发现失明或被诅咒很有用。
 
 ```
-示例: #high {%* tells you '%*'} {<ace>}
+示例: 
+#high {%* tells you '%*'} {<ace>}
 ```
 
 注释: 您可以使用 #unhighlight 命令删除高亮显示。

@@ -121,7 +121,7 @@ Termux一般不用编译，仅列出方法。
 Termux编译安装tt++
 
 1.安装环境
-pkg install make cmake libgnutls-dev zlib-dev pcre-dev wget -y
+pkg install make cmake libgnutls zlib pcre wget -y
 2.获取代码
 mkdir tintin
 cd tintin
