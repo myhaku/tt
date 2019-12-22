@@ -3118,12 +3118,13 @@ PCRE	|描述	|POSIX
 此命令将在 oldtext 中搜索给定字符串的变量，并将其替换为 newtext 中给出的字符串。
 
 如果将 newtext 留空，则将删除旧文本匹配。
+
 ```
 示例: 
 #var {test} {bli bla blo};
 #replace {test} {bl} {tr}
 ```
-这将变量测试从 “bli bla blow” 更改为 “bye troro”
+这将变量测试从 “bli bla blo” 更改为 “tri tra tro”。
 
 请记住，旧文本已经替换了转义代码 (而新文本没有)，所以如果你想替换一个 “\” 字符，你需要输入 “\\\”
 
