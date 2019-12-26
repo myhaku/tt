@@ -2219,19 +2219,39 @@ TinTin++ 有一个功能强大的自动化程序，它使用类似于 Diku MUDs 
 
 **#map goto {location}**
 
-创建地图时，您不会自动进入地图。默认情况下，创建了房间号 (vnum) 1，因此您可以使用 #map goto 1 转到它。一旦您进入地图，当您四处走动时，新房间会使用 pathdir 命令定义移动命令。默认情况下，n, ne, e, se, s, sw, w, nw, u, d被定义。
+创建地图时，您不会自动进入地图。默认情况下，创建了房间号 (vnum) 1，因此您可以使用 `#map goto 1` 转到它。一旦您进入地图，当您四处走动时，新房间会使用 pathdir 命令定义移动命令。默认情况下，n, ne, e, se, s, sw, w, nw, u, d被定义。
 
 **#map map {radius} {filename} {a|v}**
 
-要查看地图，您可以使用 #map。然而，必须不断键入 #map 是令人讨厌的。相反，可以使用 #split 显示 vt100 地图。要执行: #split 16 1 和 #map 标志 vtmap。第一个命令将顶部分割线设置为 16，底部分割线设置为 1。如果您想要更小或更大的地图显示，可以使用 10 、 13 、 19 、 22 等, 尽管对于默认显示设置，更改需要是 3 的倍数。
+要查看地图，您可以使用 #map。然而，必须不断键入 #map 是令人讨厌的。可以使用 #split 显示 vt100 地图。  
+要执行:   
 
-如果你不需要显示对角线出口，更喜欢更紧凑的外观，你可以使用 #map flag AsciiGraphics off。这将启用使用 UTF-8 框绘图字符的标准显示，结果可能会因使用的字体而异。
+> #split 16 1   
+#map flag vtmap 
 
-如果你想在不同的终端中显示地图，打开一个新的终端，启动 tt++，然后输入: #port init mapper 4051。在你的MUDs终端中，输入: #ses mapper localhost 4051。这将映射程序会话连接到您在另一个终端窗口中初始化的端口。接下来，在 MUD 会话中定义以下事件: `#EVENT {MAP ENTER ROOM} {#map map 80x24 mapvar v;#mapper #line sub {secure;var} #send {$mapvar}}`。
+第一个命令将顶部分割线设置为 16，底部分割线设置为 1。如果您想要更小或更大的地图显示，可以使用 10 、 13 、 19 、 22 等, 尽管对于默认显示设置，更改需要是 3 的倍数。
+
+如果你不需要显示对角线出口，更喜欢更紧凑的外观，你可以使用 `#map flag AsciiGraphics off`。这将启用使用 UTF-8 框绘图字符的标准显示，结果可能会因使用的字体而异。
+
+如果你想在不同的终端中显示地图，打开一个新的终端，启动 tt++，然后输入: 
+> #port init mapper 4051 
+
+在你的MUDs终端中，输入: 
+> #ses mapper localhost 4051 
+
+这将映射程序会话连接到您在另一个终端窗口中初始化的端口。  
+接下来，在 MUD 会话中定义以下事件: 
+
+```
+#EVENT {MAP ENTER ROOM} {
+  #map map 80x24 mapvar v;
+  #mapper #line sub {secure;var} #send {$mapvar}
+}
+```
 
 **#map undo**
 
-如果你不小心走进墙上，mapper会创建一个新的房间。您可以使用 #map undo 轻松修复此错误。如果你想在地图上四处移动而不在MUDs上四处移动，你可以使用: #map move {direction}。要手动删除房间，您可以使用: #map delete {direction}。
+如果你不小心走进墙上，mapper会创建一个新的房间。您可以使用 `#map undo` 轻松修复此错误。如果你想在地图上四处移动而不在MUDs上四处移动，你可以使用: #map move {direction}。要手动删除房间，您可以使用: #map delete {direction}。
 
 **#map write {filename}**
 
