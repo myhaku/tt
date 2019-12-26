@@ -58,7 +58,7 @@
 |[ Port ](#port)
 |[ Prompt ](#prompt)|<br>
 |[ Read ](#read)
-|[ Regex ](#Regex)
+|[ Regex ](#regex)
 |[Regular Expressions](#regular-expressions)|<br>
 |[ Repeat ](#repeat)
 |[ Replace ](#replace)
@@ -352,6 +352,8 @@ Path 的命令:
 > 语法：#action {文本} {命令} {优先级}
 
 #action 命令可用于用一个或多个命令响应服务器发送的特定消息。从文本消息中替换%1-99个变量，并可以在操作的命令部分使用。优先级部分是可选的，并确定操作的优先级，默认为5。
+
+__注意：%0永远不应用于触发。__
 
 如果消息以 ~ 开头必须匹配颜色代码。为了触发颜色，您可以启用`#config {convert meta} on` 为使用颜色触发而显示元字符。
 
