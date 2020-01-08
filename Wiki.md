@@ -2727,7 +2727,8 @@ say h!;say e!;say l!;say l!;say o!
 
 ## Path
 
-> 语法: #path {del|end|ins|load|map|new|save|run|walk} {argument}
+> 语法:   
+#path {del|end|ins|load|map|new|save|run|walk} {argument}
 
 
 Path 命令是一种快速简单的方法，可以记录您的移动，并创建一个命令列表，以便从一个位置移动到另一个位置并返回。要获得更高级的映射程序，请查看 [#map](#map) 命令。
@@ -2787,7 +2788,7 @@ $return
 #tick {slowwalk} {#walk f} {0.5};
 #event {END OF PATH} {#untick slowwalk}
 ```
-另可参见: [Map](#ma) and [Pathdir](#pathdir).
+另可参见: [Map](#map) and [Pathdir](#pathdir).
 
 ## Pathdir
 

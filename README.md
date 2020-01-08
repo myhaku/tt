@@ -12,7 +12,7 @@
 
 ### 这是做什么的？
 
-本仓库用于存储xgg@pkuxkx的游戏配置，<br>
+本仓库用于存储 xgg@pkuxkx 的游戏配置，<br>
 以及部分相关脚本和文档。
 
 北大侠客行是一个MUDs文字游戏，<br>
@@ -30,16 +30,17 @@ So：tintin++ on termux for pkuxkx。
 
 - 1.安装Termux
 
-style插件非必选，可配置字体和主题风格。
+style插件非必选，可配置字体和主题风格。  
+api插件可以帮助使用安卓硬件等资源。
 
-- 2.在Termux中安装必须软件及一些必要配置
+- 2.在Termux中安装必须软件及配置
 
-Termux本身不能运行MUDs游戏，必须安装mud客户端，比如：Tintin++、Go-Mud，
-环境配置可以提升使用体验(比如解决乱码和快速进入游戏)。
+Termux需要安装 MUDs 客户端，比如：TinTin++ 、Go-Mud ，
+环境配置可以帮助提升游戏体验(比如解决乱码和快速进入游戏)。
 
 - 3.配置文件管理
 
-机器人脚本则是必须的，尤其是没有图形界面的客户端，建议先使用xgg@pkuxkx的机器人熟悉一下。
+对于没有图形界面的客户端，机器人脚本相当重要，初期建议先使用 xgg@pkuxkx 的机器人熟悉一下。
 
 - 4.启动游戏客户端
 
@@ -133,7 +134,7 @@ cd /tt/src
 make
 cp tt++ /data/data/com.termux/files/usr/bin/
 或
-cp tt++ $PREFIX/usr/bin/
+cp tt++ $PREFIX/bin/
 ```
 
 
