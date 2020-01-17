@@ -219,6 +219,10 @@ __Tintin++原生不支持GBK编码，<br>
 ```
 defencoding GBK
 ```
+如果仍然乱码，试改成：
+defencoding GBK
+utf8 on
+encoding GBK UTF-8
 将以上内容复制粘贴到文本中，<br>
 修改完毕后按ESC键退出编辑模式：
 
